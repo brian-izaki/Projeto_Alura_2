@@ -1,0 +1,43 @@
+{
+  "bg": "https://images6.alphacoders.com/436/thumb-1920-436481.jpg",
+  "title": "Quiz de histórias em quadrinhos em geral",
+  "description": "Teste os seus conhecimentos sobre os personagens de histórias em quadrinhos clássicos",
+  "questions": [
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Como fazer um seletor por id via CSS?",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [
+        ".elemento",
+        "*elemento",
+        "#elemento",
+        "%elemento"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    }
+  ],
+  "external": [
+    ""
+  ],
+  "theme": {
+    "colors": {
+      "primary": "#E1010D",
+      "secondary": "#E9CD43",
+      "mainBg": "#F2F2F2",
+      "contrastText": "#262626",
+      "wrong": "#FF5722",
+      "success": "#4CAF50"
+    },
+    "borderRadius": "4px"
+  }
+}
