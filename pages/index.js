@@ -1,24 +1,15 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Footer from '../src/components/Footer';
 import GithubCorner from '../src/components/GithubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Widgets from '../src/components/Widgets';
-import NameForm from '../src/components/NameForm';
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 320px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import Button from '../src/components/Button';
+import Input from '../src/components/Input';
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const router = useRouter();
@@ -46,11 +37,14 @@ export default function Home() {
             <Widgets.Content>
               <p>{db.description}</p>
 
-              <NameForm
-                onChange={handlerChange}
-                onSubmit={handlerSubmit}
-                isDisabled={name.length === 0}
-              />
+              <form onSubmit={handlerSubmit}>
+                <Input
+                  onChange={handlerChange}
+                  placeholder="Digite o seu nome aqui"
+                  name="player"
+                />
+                <Button disabled={name.length === 0} value="Iniciar Quiz" />
+              </form>
 
             </Widgets.Content>
           </Widgets>
