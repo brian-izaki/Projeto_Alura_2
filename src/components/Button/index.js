@@ -6,14 +6,15 @@ const Btn = styled.button`
   padding: 12px 30px;
   border: 2px solid transparent;
   border-radius: 4px;
-  color: white;
+  color: ${({ theme }) => theme.colors.secondary};
+  letter-spacing: 1px;
   font-weight: bold;
   transition: linear 200ms;
-  background-color: ${({ disabled }) => (disabled ? '#8A2BE277' : '#8A2BE2')};
+  background-color: ${({ disabled, theme }) => (disabled ? `${theme.colors.primary}77` : theme.colors.primary)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   &:hover {
-    background-color: ${({ disabled }) => (disabled ? '#8A2BE277' : '#601e9e')};
+    background-color: ${({ theme }) => `${theme.colors.primary}77`};
   }
 `;
 

@@ -73,3 +73,56 @@ O tema escolhido para o quizz foi o de histórias em quadrinhos clássicos como 
   - Roteamento de url utilizando o hook do Next `useRoute`, por baixo dos panos ele utiliza o [history API](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API) que é nativo dos broswers.
 
   - Hook `useState` do próprio React para armazenar e setar estados.
+
+### Dia 3
+- Feito:
+  - Montado o layout da página de quizz
+  - O componente Widget possui "sub-componentes" ex: Widgets.Header
+  - Criado componentes para o formulário, Button e Input.
+    - foi utilizado o PropTypes neles.
+
+- Visto:
+  - Ciclo de vida do React - nasce(DidMount), irá atualiza(WillUpdate), irá finalizar(WillUnmount). 
+  - Efeitos Colaterais - é qualquer evento que afeta algo fora do escopo atual onde a função está sendo executada.
+    - Buscar dados, configurar uma subscription, e mudar o DOM manualmente dentro dos componentes React são exemplos de efeitos colaterais
+  - [**PropTypes**](https://pt-br.reactjs.org/docs/typechecking-with-proptypes.html) - realiza uma checagem de tipos nas props do componente (a ideia é semelhante ao TypeScript).
+    - Para utilizar, é necessário instalar ele com `npm install prop-types`
+    - ``` JavaScript
+      // Criando componente
+      function Componente({ nome, idade }){
+        return (
+          <div> {nome} </div>
+          <div> {idade + idade} </div>
+        )
+      }
+
+      // define um valor default para a prop
+      Componente.defaultProps = {
+        nome: 'Tony Tony Chopper',
+      }
+
+      // define os tipos para cada prop
+      Componente.propTypes = {
+        nome: PropTypes.string,
+        idade: PropTypes.number.isRequired,
+      };
+      ```
+  - *Atrinbuto **as*** - Um componente quando utiliza o styled-component pode alterar a tag do componente montado para outro no momento de utilizar esse componente.
+    - ``` JavaScript
+      // definido um componente com a tag a
+      const Option = styled.a`
+        color: blueViolet;
+      `
+      // Option seria uma tag a, mas o atributo alterou para ser uma label.
+      <Oprion as="label">
+      ```
+
+### Dia 4
+- Feito:
+  - montado a lógica de funcionamento do quizz
+  - criado o componente de Widget para os resultados
+  - adicionado o componente AlternativeForms que possui um CSS que adiciona estilos dependendo do valor de data-selected e data-status.
+  - utilizado useState e useEffect nos componentes da pagina de quizz
+
+- Visto:
+  - **LambdaServer** - com o Next é possível montar uma rota assim como no express. o arquivo pages/api/db.js é um exemplo disso.

@@ -1,0 +1,13 @@
+import db from '../../db.json';
+
+export default (req, res) => {
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT,OPTIONS,PATCH');
+  res.json(db);
+};

@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
-  background-color: ${({ theme }) => theme.colors.mainBg + 70};
+  background-color: ${({ theme }) => `${theme.colors.secondary}AA`};
   padding: 20px;
+  margin-bottom: 100px;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.contrastText};
@@ -13,7 +14,7 @@ const FooterWrapper = styled.footer`
     margin-right: 23px;
   }
   a {
-    color: ${({ theme }) => theme.colors.contrastText};
+    color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
     transition: .3s;
     &:hover,
