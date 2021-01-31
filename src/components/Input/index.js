@@ -6,7 +6,6 @@ const InputBase = styled.input`
   width: 100%;
   padding: 12px 10px;
   margin-bottom: 10px;
-  border: 2px solid blueviolet;
 `;
 
 export default function Input({

@@ -1,28 +1,90 @@
 {
   "bg": "https://images6.alphacoders.com/436/thumb-1920-436481.jpg",
-  "title": "Quiz de histórias em quadrinhos em geral",
-  "description": "Teste os seus conhecimentos sobre os personagens de histórias em quadrinhos clássicos",
+  "title": "Quiz da história em quadrinhos do Snoopy (Peanuts/Minduim)",
+  "description": "Teste os seus conhecimentos sobre o Snoopy",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
+      "image": "https://media.giphy.com/media/UOdWc6CGpISvS/giphy.gif",
+      "title": "Qual o nome da história em quadrinhos que o Snoopy aparece?",
+      "description": "Começando com uma bem dífícil",
+      "answer": 3,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Snoopy",
+        "Charlie Brown",
+        "Scooby-Doo",
+        "Peanuts"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "image": "https://media.giphy.com/media/xUPGcF1R7eWxASMa52/giphy.gif",
+      "title": "Qual o nome do passarinho amarelo que é amigo do snoopy?",
+      "description": "Essa é pra sair voando",
+      "answer": 2,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "Woody",
+        "Piu-Piu",
+        "Woodstock",
+        "Garibaldo"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/J93sVmfYBtsRi/giphy.gif",
+      "title": "Qual a raça do cãozinho Snoopy?",
+      "description": "Parece difícil, mas nem tanto...",
+      "answer": 1,
+      "alternatives": [
+         "Poodle",
+         "Beagle",
+         "Labrador",
+         "Não possui raça definida"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/kWJs200Ffsob6/giphy.gif",
+      "title": "Qual é o nome do dono do Snoopy?",
+      "description": "Lembre-se, sempre existem dias de luta e dias de glória.",
+      "answer": 3,
+      "alternatives": [
+         "Schulz",
+         "Rick",
+         "Peanuts",
+         "Charlie Brown"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/yidhmNqZAaji8/giphy.gif",
+      "title": "Qual o nome do personagem que sempre está segurando um cobertor?",
+      "description": "Essa é facíl",
+      "answer": 2,
+      "alternatives": [
+         "Snoopy",
+         "Schoeder",
+         "Linus",
+         "Sally"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/SLwtUXIau7G1O/giphy.gif",
+      "title": "Qual o nome da personagem que tem uma barraca de 'ajuda psiquiátrica'?",
+      "description": "Ela sempre tem clientes",
+      "answer": 1,
+      "alternatives": [
+         "Emma",
+         "Lucy",
+         "Patty Pimentinha",
+         "Sally"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/9X6OGGZ2SNyQ8/giphy.gif",
+      "title": "Quais dos seguintes livros o Snoopy decidiu ler uma palavra por dia?",
+      "description": "Ela sempre tem clientes",
+      "answer": 2,
+      "alternatives": [
+         "A arte da guerra",
+         "Harry Potter",
+         "Guerra e Paz",
+         "Don Casmurro"
       ]
     }
   ],
