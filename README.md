@@ -23,6 +23,7 @@ O tema escolhido para o quizz foi o de histórias em quadrinhos clássicos como 
   - utilizado um arquivo db.json para centralizar questões, cores e temas do layout
 
 - Visto:
+  - O Framework Next.js tem como principal diferencial o **Server Side Rendering (SSR)** da aplicação. Ou seja, renderiza o HTML inteiro no servidor e entrega ele pronto para o client, diferente do React comum que entrega apenas uma tag div com id root e o client que vai ser o responsável por renderizar o HTML.
 
   - Com o template do Next com Styled components, já é montado a estrutura de diretórios rapidamente.
 
@@ -126,3 +127,16 @@ O tema escolhido para o quizz foi o de histórias em quadrinhos clássicos como 
 
 - Visto:
   - **LambdaServer** - com o Next é possível montar uma rota assim como no express. o arquivo pages/api/db.js é um exemplo disso.
+
+### Dia 5
+- Feito:
+  - implementação de uma página dinâmica
+  - buscado o db.json de outros quizes
+  - mondato o layout de acordo com o tema e perguntas dos quizes buscados.
+  - utilizado a lib framer-motion.
+
+- Visto:
+  - [**getServerSideProps**](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) - os códigos dentro dessa função serão executados no lado do servidor.
+    - dentro dessa função, você tem os poderes para manipular rotas, pegar query params, ver o header de requests, entre outras coisas
+    - Pode ser utilizado um fetch dentro para que os dados que forem retornados da promisse possam ser renderizados junto no HTML.
+  - [Framer-motion](https://www.framer.com/motion/) - lib para adicionar animações com css.

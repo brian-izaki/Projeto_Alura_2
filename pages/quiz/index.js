@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import db from '../db.json';
-import Footer from '../src/components/Footer';
-import GithubCorner from '../src/components/GithubCorner';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
-import Widgets from '../src/components/Widgets';
-import QuizContainer from '../src/components/QuizContainer';
-import Button from '../src/components/Button';
-import AlternativesForm from '../src/components/AlternativesForm';
+import db from '../../db.json';
+import Footer from '../../src/components/Footer';
+import GithubCorner from '../../src/components/GithubCorner';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizLogo from '../../src/components/QuizLogo';
+import Widgets from '../../src/components/Widgets';
+import QuizContainer from '../../src/components/QuizContainer';
+import Button from '../../src/components/Button';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function LoadingWidget() {
   return (
@@ -26,6 +27,7 @@ function ResultWidget({ results }) {
   return (
     <Widgets>
       <Widgets.Header>
+        <BackLinkArrow href="/" />
         <h1>
           Você acertou
           {' '}
@@ -80,6 +82,7 @@ function QuizWidget({
   return (
     <Widgets>
       <Widgets.Header>
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widgets.Header>
       <img
