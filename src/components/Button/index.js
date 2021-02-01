@@ -18,11 +18,13 @@ const Btn = styled.button`
   }
 `;
 
-export default function Button({ type, value, disabled }) {
+export default function Button({
+  type, disabled, children,
+}) {
   return (
     <div>
       <Btn type={type} disabled={disabled}>
-        {value}
+        {children}
       </Btn>
     </div>
   );
@@ -36,5 +38,8 @@ Button.defaultProps = {
 Button.propTypes = {
   type: PropTypes.string,
   disabled: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+  ]).isRequired,
 };

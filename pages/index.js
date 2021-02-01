@@ -54,7 +54,9 @@ export default function Home() {
                   placeholder="Digite o seu nome aqui"
                   name="player"
                 />
-                <Button disabled={name.length === 0} value="Iniciar Quiz" />
+                <Button disabled={name.length === 0}>
+                  Iniciar Quiz
+                </Button>
               </form>
 
             </Widgets.Content>

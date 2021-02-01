@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import Footer from '../../components/Footer';
 import GithubCorner from '../../components/GithubCorner';
 import QuizBackground from '../../components/QuizBackground';
@@ -34,7 +35,7 @@ export default function QuizPage({ dbQuestions, dbBg }) {
   useEffect(() => {
     // atualiza apenas na primeira renderização
     setTimeout(() => {
-      setScreenState('QUIZ');
+      setScreenState('RESULT');
     }, 1 * 1000);
   }, []);
 
@@ -93,8 +94,45 @@ function QuizWidget({
     }, 1 * 1000);
   }
 
+  function listAlternatives() {
+    return questions.alternatives.map((alternative, alternativeIndex) => {
+      const alternativeId = `alternative__${alternativeIndex}`;
+      const dataSelected = selectedAlternative === alternativeIndex;
+      const dataStatus = isQuestionCorrect ? 'SUCCESS' : 'ERROR';
+
+      return (
+        <Widgets.Topic
+          as={motion.label}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          key={alternativeId}
+          htmlFor={alternativeId}
+          data-selected={dataSelected}
+          data-status={isFormSubmited && dataStatus}
+        >
+          <input
+            style={{ display: 'none' }}
+            type="radio"
+            name={questionId}
+            id={alternativeId}
+            onClick={() => {
+              setSelectedAlternative(alternativeIndex);
+            }}
+            // checked={selectedAlternative !== undefined}
+          />
+          {alternative}
+        </Widgets.Topic>
+      );
+    });
+  }
+
   return (
-    <Widgets>
+    <Widgets
+      as={motion.section}
+      initial={{ x: -50 }}
+      animate={{ x: 0 }}
+      transition={{ ease: 'easeOut', duration: 1 }}
+    >
       <Widgets.Header>
         <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
@@ -114,40 +152,15 @@ function QuizWidget({
         <p>{questions.description}</p>
 
         <AlternativesForm onSubmit={handlerQuestionSubmit}>
-          {questions.alternatives.map((alternative, alternativeIndex) => {
-            const alternativeId = `alternative__${alternativeIndex}`;
-            const dataSelected = selectedAlternative === alternativeIndex;
-            const dataStatus = isQuestionCorrect ? 'SUCCESS' : 'ERROR';
-            return (
-              <Widgets.Topic
-                as="label"
-                key={alternativeId}
-                htmlFor={alternativeId}
-                data-selected={dataSelected}
-                data-status={isFormSubmited && dataStatus}
-              >
-                <input
-                  style={{ display: 'none' }}
-                  type="radio"
-                  name={questionId}
-                  id={alternativeId}
-                  onChange={() => {
-                    setSelectedAlternative(alternativeIndex);
-                  }}
-                  // checked={selectedAlternative !== undefined}
-                />
-                {alternative}
-              </Widgets.Topic>
-            );
-          })}
 
-          {/* <pre>{JSON.stringify(questions, null, 4)}</pre> */}
+          {listAlternatives()}
 
           <Button
             type="submit"
             disabled={!hasSelectAlternative}
-            value="Confirmar"
-          />
+          >
+            Confirmar
+          </Button>
         </AlternativesForm>
       </Widgets.Content>
     </Widgets>
@@ -161,13 +174,29 @@ function LoadingWidget() {
         <h1>Carregando...</h1>
       </Widgets.Header>
       <Widgets.Content>
-        <p>Carregando descrição...</p>
+        Carregando...
       </Widgets.Content>
     </Widgets>
   );
 }
 
 function ResultWidget({ results }) {
+  function listResults() {
+    return results.map((result, resultIndex) => {
+      const alternativeId = `${result}__${resultIndex}`;
+      return (
+        <li key={alternativeId}>
+          <p>
+            <strong>
+              {`#${resultIndex + 1} `}
+            </strong>
+            {`você ${result ? 'Acertou 😎' : 'Errou 😱'}`}
+          </p>
+        </li>
+      );
+    });
+  }
+
   return (
     <Widgets>
       <Widgets.Header>
@@ -183,25 +212,11 @@ function ResultWidget({ results }) {
       <Widgets.Content>
         <p>Resultado de cada questão: </p>
         <ul>
-          {results.map((result, resultIndex) => {
-            const liId = `${result}__${resultIndex}`;
-            return (
-              <li key={liId}>
-                <p>
-                  <strong>
-                    #
-                    {resultIndex + 1}
-                    {' '}
-                  </strong>
-                  você
-                  {' '}
-                  {result ? 'Acertou 😎' : 'Errou 😱'}
-                </p>
-              </li>
-            );
-          })}
+          {listResults()}
         </ul>
-        <Button value={<StyleLink href="/">Voltar ao início</StyleLink>} />
+        <Button>
+          <StyleLink href="/">Voltar ao início</StyleLink>
+        </Button>
       </Widgets.Content>
     </Widgets>
   );
